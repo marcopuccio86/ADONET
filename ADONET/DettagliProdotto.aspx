@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="poi" id="back" runat="server">
             <asp:Label ID="lblNomeProdotto" runat="server" Text=""></asp:Label> <br />
             <asp:Label ID="lblDescrizioneProdotto" runat="server" Text=""></asp:Label> <br />
             <asp:Label ID="lblPrezzoProdotto" runat="server" Text="" ></asp:Label> 

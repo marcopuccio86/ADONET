@@ -27,8 +27,13 @@ namespace ADONET
                 con.Open();
 
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "INSERT INTO Clienti VALUES ('Marco', 'Puccio')";
                 command.Connection = con;
+
+                command.Parameters.AddWithValue("@Nome", txtNome.Text);
+                command.Parameters.AddWithValue("@Cognome", txtCognome.Text);
+               
+                command.CommandText = $"INSERT INTO Clienti VALUES (@Cognome, @Nome)";
+                
                 int row = command.ExecuteNonQuery();
 
                 if (row > 0)
@@ -123,8 +128,9 @@ namespace ADONET
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                List<Prodotto> listaProdotti = new List<Prodotto>(); 
+                List<Prodotto> listaProdotti = new List<Prodotto>();
 
+                
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -138,10 +144,13 @@ namespace ADONET
                     }
                 }
 
-                Repeater1.DataSource = listaProdotti;
-                Repeater1.DataBind();
-
+                //Repeater1.DataSource = listaProdotti;
+                //Repeater1.DataBind();
+                
+                GridView1.DataSource= listaProdotti;
+                GridView1.DataBind();
                 con.Close();
+
             }
             catch (Exception ex)
             {
@@ -151,14 +160,16 @@ namespace ADONET
 
         }
 
-
-        public class Prodotto
-        {
-            public int IdProdotto { get; set; }
-            public string NomeProdotto { get; set; }
-            public string DescrizioneProdotto { get; set; }
-            public string SottotioloProdotto { get; set; }
-            public decimal Prezzo { get; set; }
-        }
     }
+
+    public class Prodotto
+    {
+        public int IdProdotto { get; set; }
+        public string NomeProdotto { get; set; }
+        public string DescrizioneProdotto { get; set; }
+        public string SottotioloProdotto { get; set; }
+        public decimal Prezzo { get; set; }
+    }
+
+
 }

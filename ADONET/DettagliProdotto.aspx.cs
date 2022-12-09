@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using static ADONET.Default;
 
@@ -16,7 +18,7 @@ namespace ADONET
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idProdotto = Request.QueryString["idProdotto"];
+            string idPassato = Request.QueryString["idProdotto"];
 
             try
             {
@@ -25,7 +27,9 @@ namespace ADONET
                 con.Open();
 
                 SqlCommand command = new SqlCommand();
-                command.CommandText = $"SELECT * FROM PRODOTTI WHERE idProdotto = {idProdotto}";
+                command.CommandText = "SELECT * FROM PRODOTTI WHERE idProdotto = @idProdotto";
+                command.Parameters.AddWithValue("@idProdotto", idPassato);
+
                 command.Connection = con;
 
                 SqlDataReader reader = command.ExecuteReader();

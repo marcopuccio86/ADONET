@@ -11,7 +11,7 @@ namespace ADONET
 {
 
 
-    public partial class DettagliProdotto
+    public partial class ADO_Disconnesso
     {
 
         /// <summary>
@@ -24,39 +24,21 @@ namespace ADONET
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controllo back.
+        /// Controllo GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl back;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Controllo lblNomeProdotto.
+        /// Controllo SqlDataSource1.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNomeProdotto;
-
-        /// <summary>
-        /// Controllo lblDescrizioneProdotto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescrizioneProdotto;
-
-        /// <summary>
-        /// Controllo lblPrezzoProdotto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrezzoProdotto;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }
